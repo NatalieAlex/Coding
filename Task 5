@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "RUS");
+	double x;
+	cout << "Введите x: ";
+	cin >> x;
+	double yi = x,
+	yi1 = 0;
+	while (1) {
+		yi1 = 0.5 * (yi + 3*x / (2*pow(yi,2) + x / yi));
+		if (abs(yi1 - yi) <= 10e-5) {
+			break;
+		}
+		else {
+			yi = yi1;
+		}
+	}
+	cout << "Кубический корень равен: " << yi1 << endl;
+	system ("pause");
+	return 0;
+}
